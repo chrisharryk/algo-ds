@@ -1,10 +1,11 @@
 def dfs(stack, adj, source, vis):
-    stack.append(source)
     vis.add(source)
 
     for nbour in adj[source]:
         if nbour not in vis:
             dfs(stack, adj, nbour, vis)
+
+    stack.append(source)
 
 def main():
     # 0 based indexing
