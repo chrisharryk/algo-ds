@@ -26,9 +26,8 @@ def main():
         if node not in vis:
             dfs(stack, adj, node, vis)
 
+    # popping from the stack gives the same res. as below
     print(stack[::-1])
-
-    pass
 
 if __name__ == '__main__':
     main()
