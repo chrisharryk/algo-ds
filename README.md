@@ -1,3 +1,3 @@
-# algo-ds
+# algorithms
 
-collection of my algorithm and data structres implementation in python 3
+collection of my algorithm implementations in python 3
