@@ -38,7 +38,5 @@ def main():
     # dfs(adj, source, vis)
     # bfs(adj, source)
 
-    pass
-
 if __name__ == '__main__':
     main()
