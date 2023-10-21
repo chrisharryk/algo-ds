@@ -9,6 +9,7 @@ public class LinkedList {
     }
 
     static Node addAtFront(int val, Node head) {
+        if (head == null) return new Node(val);
         Node newNode = new Node(val);
         newNode.next = head;
         return newNode;
@@ -19,12 +20,14 @@ public class LinkedList {
         while (n-- > 1) {
             head = head.next;
         }
+        if (head == null) throw new RuntimeException("the index given is invalid");
         Node next = head.next;
         head.next = newNode;
         newNode.next = next;
     }
 
     static void addAtEnd(int val, Node head) {
+        if (head == null) throw new RuntimeException("head is not initialized");
         while (head.next != null) {
             head = head.next;
         }
@@ -32,6 +35,7 @@ public class LinkedList {
     }
 
     static Node deleteAtFront(Node head) {
+        if (head == null) return null;
         return head.next;
     }
 
@@ -39,10 +43,12 @@ public class LinkedList {
         while (n-- > 1) {
             head = head.next;
         }
+        if (head == null) throw new RuntimeException("given index is invalid");
         head.next = head.next.next;
     }
 
     static void deleteAtEnd(Node head) {
+        if (head == null) return;
         while (head.next.next != null) {
             head = head.next;
         }
