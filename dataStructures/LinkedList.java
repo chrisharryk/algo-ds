@@ -8,34 +8,31 @@ public class LinkedList {
         }
     }
 
-    static Node addAtFront(int val, Node head) {
-        if (head == null) return new Node(val);
-        Node newNode = new Node(val);
-        newNode.next = head;
-        return newNode;
+    static Node addAtHead(int val, Node head) {
+        Node newHead = new Node(val);
+        newHead.next = head;
+        return newHead;
     }
 
-    static void addAtNthIndex(int val, int n, Node head) {
-        Node newNode = new Node(val);
+    static void addAtNthIndex(int n, int val, Node head) {
         while (n-- > 1) {
             head = head.next;
         }
-        if (head == null) throw new RuntimeException("the index given is invalid");
+        Node newNode = new Node(val);
         Node next = head.next;
         head.next = newNode;
         newNode.next = next;
     }
 
     static void addAtEnd(int val, Node head) {
-        if (head == null) throw new RuntimeException("head is not initialized");
+        Node newNode = new Node(val);
         while (head.next != null) {
             head = head.next;
         }
-        head.next = new Node(val);
+        head.next = newNode;
     }
 
-    static Node deleteAtFront(Node head) {
-        if (head == null) return null;
+    static Node deleteAtHead(Node head) {
         return head.next;
     }
 
@@ -43,12 +40,10 @@ public class LinkedList {
         while (n-- > 1) {
             head = head.next;
         }
-        if (head == null) throw new RuntimeException("given index is invalid");
         head.next = head.next.next;
     }
 
     static void deleteAtEnd(Node head) {
-        if (head == null) return;
         while (head.next.next != null) {
             head = head.next;
         }
@@ -63,22 +58,21 @@ public class LinkedList {
     }
 
     public static void main(String[] args) {
+        Node head = new Node(1);
         /*
-        * list of methods implemented on singly linked list
-        * 1. add at front X
+        * 1. add at head X
         * 2. add at nth index X
         * 3. add at end X
-        * 4. delete at front X
+        * 4. delete at head X
         * 5. delete at nth index X
-        * 6. delete at end X
-        * 7. print list X
+        * 6. delete at end
+        * 7. print list
         * */
-        // driver code to check whether the methods are working properly or not
-        Node head = new Node(1);
-        head = addAtFront(123, head);
-        addAtNthIndex(321, 1, head);
-        addAtEnd(1234, head);
-        head = deleteAtFront(head);
+        // driver code to test the above methods
+        head = addAtHead(111, head);
+        addAtNthIndex(1, 123, head);
+        addAtEnd(321, head);
+        head = deleteAtHead(head);
         deleteAtNthIndex(1, head);
         deleteAtEnd(head);
         printList(head);
