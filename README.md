@@ -1,3 +1,3 @@
 # algorithms
 
-collection of my algorithm implementations in python 3
+collection of my algorithm implementations in Java ☕
