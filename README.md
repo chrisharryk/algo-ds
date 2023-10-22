@@ -1,3 +1,3 @@
 # algorithms
 
-collection of my algorithm implementations in Java ☕
+collection of my data structures & algorithms implementations in Java ☕
