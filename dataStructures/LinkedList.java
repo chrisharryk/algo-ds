@@ -59,6 +59,7 @@ public class LinkedList {
 
     public static void main(String[] args) {
         Node head = new Node(1);
+        
         /*
         * 1. add at head X
         * 2. add at nth index X
@@ -68,6 +69,7 @@ public class LinkedList {
         * 6. delete at end
         * 7. print list
         * */
+        
         // driver code to test the above methods
         head = addAtHead(111, head);
         addAtNthIndex(1, 123, head);
